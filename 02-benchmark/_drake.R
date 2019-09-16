@@ -1,10 +1,10 @@
 # Load packages and function -----------------------------------------------------------
-source("02-benchmark/packages.R")
+source("packages.R")
 
-sourceDirectory("02-benchmark/R")
+sourceDirectory("R")
 
 # suppress progress output of `benchmark()`
-lgr::get_logger("mlr3")$set_threshold("warn")
+#lgr::get_logger("mlr3")$set_threshold("warn")
 
 # Set Slurm options for workers -------------------------------------------
 
@@ -16,9 +16,10 @@ options(clustermq.scheduler = "multicore")
 
 # Create plans ------------------------------------------------------------
 
-source("02-benchmark/benchmark_plan.R")
+source("benchmark_plan.R")
 
-plan = bind_plans(param_sets_plan, resampling_plan, tuning_plan, benchmark_plan)
+plan = bind_plans(param_sets_plan, resampling_plan, tuning_plan,
+                  measures_plan, benchmark_plan)
 
 # Set the config ----------------------------------------------------------
 

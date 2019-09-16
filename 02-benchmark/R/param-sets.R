@@ -31,7 +31,7 @@ param_sets_plan = drake_plan(
   ),
   param_set_knn2 = target({
     ParamSet$new(params = list(
-      ParamInt$new("k", lower = 1, upper = 10)
+      ParamInt$new("k", lower = 1, upper = 30)
     ))
   }
   )

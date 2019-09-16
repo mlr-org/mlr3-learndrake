@@ -23,14 +23,16 @@ benchmark_plan = drake_plan(
 
   bm = target(
 
-    create_single_bm(learner = learner,
+    create_single_bm(
+      learner = learner,
       learner_id = learner_id,
-      task = task,
+      task = tsk(task),
       measures = measures,
       param_set = param_set_sym,
       resampling_inner = resampling_inner,
       resampling_outer = resampling_outer,
-      terminator = terminator),
+      terminator = terminator
+      ),
 
     transform = map(.data = !!settings_grid,
       .id = c(learner, task) # creation of bm_* target IDs
