@@ -1,0 +1,32 @@
+Package: mlr3-learndrake
+Title: Use mlr3 with drake
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Patrick",
+             family = "Schratz",
+             role = c("aut", "cre"),
+             email = "patrick.schratz@gmail.com",
+             comment = c(ORCID = "0000-0003-0748-6624")),
+      person(given = "Jakob",
+             family = "Richter",
+             role = "aut",
+             email = "jakob1richter@gmail.com",
+             comment = c(ORCID = "0000-0003-4481-5554")))
+Description: What the package does (one paragraph).
+License: What license it uses
+Imports:
+    callr,
+    conflicted,
+    dplyr,
+    drake,
+    magrittr,
+    mlr3,
+    mlr3learners,
+    mlr3tuning,
+    paradox,
+    R.utils,
+    stringr,
+    tibble,
+    tidyr
+Encoding: UTF-8
+LazyData: true
