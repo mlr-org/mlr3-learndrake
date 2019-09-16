@@ -30,3 +30,5 @@ Imports:
     tidyr
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/mlr-org/mlr3-learndrake
+BugReports: https://github.com/mlr-org/mlr3-learndrake/issues
