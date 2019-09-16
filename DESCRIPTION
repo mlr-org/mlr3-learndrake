@@ -14,6 +14,8 @@ Authors@R:
              comment = c(ORCID = "0000-0003-4481-5554")))
 Description: What the package does (one paragraph).
 License: What license it uses
+URL: https://github.com/mlr-org/mlr3-learndrake
+BugReports: https://github.com/mlr-org/mlr3-learndrake/issues
 Imports:
     callr,
     conflicted,
@@ -25,10 +27,9 @@ Imports:
     mlr3tuning,
     paradox,
     R.utils,
+    rstudioapi,
     stringr,
     tibble,
     tidyr
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/mlr-org/mlr3-learndrake
-BugReports: https://github.com/mlr-org/mlr3-learndrake/issues
