@@ -1,0 +1,41 @@
+---
+title: "Visualization of benchmark results"
+output: html_document
+author: "Your Name"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.retina = 3,
+  fig.align = "center",
+  fig.width = 9.93,
+  fig.height = 6.13,
+  out.width = "100%",
+  echo = FALSE
+)
+
+source("packages.R")
+R.utils::sourceDirectory("R")
+
+# load drake objects
+drake::loadd(
+  agg
+)
+library("ggplot2")
+library("mlr3")
+library("mlr3viz")
+```
+
+## Default
+
+```{r, warning=FALSE}
+autoplot(agg)
+```
+
+## Colored
+
+```{r, warning=FALSE}
+autoplot(agg) +
+  geom_boxplot(aes(fill = learner_id)) +
+  scale_fill_viridis_d()
+```
