@@ -38,7 +38,7 @@ background-size: 100%
 
 .talk-meta[
 .talk-title[
-# Reproducible Data Workflows
+# Reproducible machine learning workflows
 ]
 
 .talk-author[
@@ -69,7 +69,7 @@ class: top hide-count center middle
 <br><br>
 
 .small[
-(_Slide style and content borrowed from [gadenbui/drake-intro](https://github.com/gadenbuie/drake-intro)_ `r icon::fa_rocket()`)
+(_Slide style and content borrowed from [gadenbuie/drake-intro](https://github.com/gadenbuie/drake-intro)_ `r icon::fa_rocket()`)
 ]
 
 ---
