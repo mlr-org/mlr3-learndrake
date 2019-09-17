@@ -30,4 +30,7 @@ rstudioapi::openProject("03-pipelines", newSession = TRUE)
 
 ## Slides
 
-mlr3: `utils::browseURL(here::here("slides/mlr3/whyr2019_mlr3.html"))`
+<img src="https://docs.ropensci.org/drake/reference/figures/logo.svg" align="right" alt="logo" width="20" height = "20" style = "border: none; float: left;"> &emsp; [drake](https://rawcdn.githack.com/mlr-org/mlr3-learndrake/037aa8add1759d4fe6c800fcb048e26c450e825e/slides/drake/index.html) 
+
+<img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" align="right" alt="logo" width="30" style = "border: none; float: left;"> &nbsp; [mlr3](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3.html) 
+
