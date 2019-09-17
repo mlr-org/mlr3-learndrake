@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>R Notebook</title>
+
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">R Notebook</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#load-data">Load Data</a></li>
+<li><a href="#tidy-data">Tidy Data</a></li>
+<li><a href="#exploratory-plot-life-expectancy-by-gender-and-income-quantile-in-tampa">Exploratory Plot: Life Expectancy by Gender and Income Quantile in Tampa</a></li>
+<li><a href="#intermediate-processing-calculate-mean-male-female-life-expectancy">Intermediate Processing: Calculate Mean (Male, Female) Life Expectancy</a></li>
+<li><a href="#exploratory-plot-mean-life-expectancy-by-income-quantile-in-tampa">Exploratory Plot: Mean Life Expectancy by Income Quantile in Tampa</a></li>
+<li><a href="#model-life-expectancy-by-income-quantile">Model: Life Expectancy by Income Quantile</a></li>
+<li><a href="#report-extract-results-from-model">Report: Extract Results from Model</a></li>
+<li><a href="#report-plot-modeled-life-expectancy-in-best-and-worst-cities">Report: Plot Modeled Life Expectancy in Best and Worst Cities</a></li>
+</ul>
+</div>
+
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p><a href="https://jamanetwork.com/journals/jama/fullarticle/2513561?guestAccessKey=4023ce75-d0fb-44de-bb6c-8a10a30a6173">The Association Between Income and Life Expectancy in the United States, 2001-2014</a></p>
+</div>
+<div id="load-data" class="section level2">
+<h2>Load Data</h2>
+<pre class="r"><code>life_exp_file &lt;- here::here(&quot;data&quot;, &quot;health_ineq_online_table_9.csv&quot;)
+life_exp &lt;- read_csv(life_exp_file)</code></pre>
+</div>
+<div id="tidy-data" class="section level2">
+<h2>Tidy Data</h2>
+<pre class="r"><code>income_quantiles &lt;- c(
+  &quot;1&quot; = &quot;Bottom&quot;, 
+  &quot;2&quot; = &quot;Lower Middle&quot;, 
+  &quot;3&quot; = &quot;Upper Middle&quot;, 
+  &quot;4&quot; = &quot;Top&quot;
+)
+adjustment_types &lt;- c(raceadj = &quot;Race Adjusted&quot;, agg = &quot;Unadjusted&quot;)
+
+life_exp_tidy &lt;-
+  life_exp %&gt;% 
+  select(cz:year, contains(&quot;le_&quot;)) %&gt;% 
+  gather(key, value, contains(&quot;le_&quot;)) %&gt;% 
+  extract(
+    col = key, 
+    into = c(&quot;variable&quot;, &quot;adjustment&quot;, &quot;income_quantile&quot;, &quot;sex&quot;), 
+    regex = &quot;(sd_le|le)_(raceadj|agg)_q(\\d)_(\\w)&quot;
+  ) %&gt;% 
+  mutate(
+    adjustment = recode(adjustment, !!!adjustment_types),
+    income_quantile = recode(income_quantile, !!!income_quantiles),
+    sex = recode(sex, &quot;F&quot; = &quot;Female&quot;, &quot;M&quot; = &quot;Male&quot;)
+  ) %&gt;% 
+  rename(state = stateabbrv) %&gt;% 
+  spread(variable, value)</code></pre>
+</div>
+<div id="exploratory-plot-life-expectancy-by-gender-and-income-quantile-in-tampa" class="section level2">
+<h2>Exploratory Plot: Life Expectancy by Gender and Income Quantile in Tampa</h2>
+<pre class="r"><code>income_quantile_colors &lt;- c(
+  &quot;Bottom&quot;       = &quot;#00589a&quot;,
+  &quot;Lower Middle&quot; = &quot;#82c878&quot;,
+  &quot;Upper Middle&quot; = &quot;#faa555&quot;,
+  &quot;Top&quot;          = &quot;#eb1455&quot;
+)
+
+life_exp_tidy %&gt;% 
+  filter(
+    czname == &quot;Tampa&quot;,
+    adjustment == &quot;Race Adjusted&quot;,
+    income_quantile %in% c(&quot;Bottom&quot;, &quot;Top&quot;)
+  ) %&gt;% 
+  ggplot() +
+  aes(
+    x = year, y = le, 
+    color = income_quantile, 
+    group = paste(income_quantile, sex)
+  ) +
+  geom_point(size = 0.75, show.legend = FALSE) +
+  geom_line() +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  facet_wrap(~ sex) +
+  scale_color_manual(values = income_quantile_colors) +
+  scale_x_continuous(breaks = seq(2002, 2018, 4)) +
+  labs(
+    title = &quot;Tampa&quot;,
+    x = NULL,
+    y = &quot;Life Expectancy&quot;,
+    color = &quot;Income Quantile&quot;
+  ) +
+  theme_minimal() +
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="index_files/figure-html/plot-tampa-life-expectancy-gender-1.png" width="960" /></p>
+</div>
+<div id="intermediate-processing-calculate-mean-male-female-life-expectancy" class="section level2">
+<h2>Intermediate Processing: Calculate Mean (Male, Female) Life Expectancy</h2>
+<pre class="r"><code>life_exp_tidy_mean &lt;- 
+  life_exp_tidy %&gt;% 
+  gather(variable, value, le:sd_le) %&gt;% 
+  nest(sex, value) %&gt;% 
+  mutate(value = map_dbl(data, ~ mean(.$value))) %&gt;% 
+  select(-data) %&gt;% 
+  spread(variable, value)</code></pre>
+</div>
+<div id="exploratory-plot-mean-life-expectancy-by-income-quantile-in-tampa" class="section level2">
+<h2>Exploratory Plot: Mean Life Expectancy by Income Quantile in Tampa</h2>
+<pre class="r"><code>life_exp_tidy_mean %&gt;% 
+  filter(
+    czname == &quot;Tampa&quot;,
+    adjustment == &quot;Race Adjusted&quot;
+  ) %&gt;% 
+  ggplot() +
+  aes(x = year, y = le, color = income_quantile) +
+  geom_point(show.legend = FALSE) +
+  geom_line() +
+  geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  scale_x_continuous(breaks = seq(2002, 2018, 4)) +
+  theme_minimal() +
+  labs(
+    title = &quot;Tampa&quot;,
+    x = NULL,
+    y = &quot;Life Expectancy&quot;,
+    color = &quot;Income Quantile&quot;
+  ) +
+  scale_color_manual(values = income_quantile_colors) +
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="index_files/figure-html/plot-tampa-mean-life-expectancy-1.png" width="960" /></p>
+</div>
+<div id="model-life-expectancy-by-income-quantile" class="section level2">
+<h2>Model: Life Expectancy by Income Quantile</h2>
+<pre class="r"><code>life_exp_model &lt;- 
+  life_exp_tidy_mean %&gt;% 
+  select(czname, state, pop2000, year, adjustment, income_quantile, le) %&gt;% 
+  filter(
+    adjustment == &quot;Race Adjusted&quot;,
+    income_quantile %in% c(&quot;Bottom&quot;, &quot;Top&quot;)
+  ) %&gt;% 
+  nest(year, le) %&gt;% 
+  mutate(
+    lm = map(data, ~ lm(le ~ year, data = .x)),
+    pred = map2(data, lm, modelr::add_predictions),
+    est = map(lm, broom::tidy)
+  )
+
+head(life_exp_model)</code></pre>
+<pre><code>## # A tibble: 6 x 9
+##   czname  state pop2000 adjustment  income_quantile data  lm    pred  est  
+##   &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;           &lt;lis&gt; &lt;lis&gt; &lt;lis&gt; &lt;lis&gt;
+## 1 Knoxvi… TN     727600 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…
+## 2 Greens… NC    1055133 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…
+## 3 Charlo… NC    1423942 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…
+## 4 Fayett… NC     644101 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…
+## 5 Raleigh NC    1412127 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…
+## 6 Virgin… VA    1119468 Race Adjus… Bottom          &lt;tib… &lt;lm&gt;  &lt;tib… &lt;tib…</code></pre>
+</div>
+<div id="report-extract-results-from-model" class="section level2">
+<h2>Report: Extract Results from Model</h2>
+<pre class="r"><code>life_exp_model_results &lt;- 
+  life_exp_model %&gt;% 
+  unnest(est) %&gt;% 
+  filter(term == &quot;year&quot;) %&gt;% 
+  select(-adjustment, -term, -std.error, -statistic, -p.value) %&gt;% 
+  spread(income_quantile, estimate) %&gt;% 
+  mutate(czname = fct_reorder(czname, Bottom, .desc = TRUE)) %&gt;% 
+  arrange(czname) %&gt;% 
+  rename(
+    &quot;Commuting Zone&quot; = czname,
+    &quot;State&quot; = state,
+    &quot;Population (2000)&quot; = pop2000
+  )</code></pre>
+<pre class="r"><code>life_exp_model_results %&gt;% 
+  head(n = 10) %&gt;% 
+  knitr::kable(digits = 3, caption = &quot;Top 10 Cities&quot;)</code></pre>
+<table>
+<caption>Top 10 Cities</caption>
+<thead>
+<tr class="header">
+<th align="left">Commuting Zone</th>
+<th align="left">State</th>
+<th align="right">Population (2000)</th>
+<th align="right">Bottom</th>
+<th align="right">Top</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Toms River</td>
+<td align="left">NJ</td>
+<td align="right">1126217</td>
+<td align="right">0.378</td>
+<td align="right">0.224</td>
+</tr>
+<tr class="even">
+<td align="left">Birmingham</td>
+<td align="left">AL</td>
+<td align="right">1038182</td>
+<td align="right">0.287</td>
+<td align="right">-0.146</td>
+</tr>
+<tr class="odd">
+<td align="left">Richmond</td>
+<td align="left">VA</td>
+<td align="right">1040192</td>
+<td align="right">0.256</td>
+<td align="right">0.347</td>
+</tr>
+<tr class="even">
+<td align="left">Syracuse</td>
+<td align="left">NY</td>
+<td align="right">1080612</td>
+<td align="right">0.246</td>
+<td align="right">0.126</td>
+</tr>
+<tr class="odd">
+<td align="left">Cincinnati</td>
+<td align="left">OH</td>
+<td align="right">1954800</td>
+<td align="right">0.243</td>
+<td align="right">0.337</td>
+</tr>
+<tr class="even">
+<td align="left">Fayetteville</td>
+<td align="left">NC</td>
+<td align="right">644101</td>
+<td align="right">0.241</td>
+<td align="right">-0.272</td>
+</tr>
+<tr class="odd">
+<td align="left">Springfield</td>
+<td align="left">MA</td>
+<td align="right">680014</td>
+<td align="right">0.234</td>
+<td align="right">0.115</td>
+</tr>
+<tr class="even">
+<td align="left">Gary</td>
+<td align="left">IN</td>
+<td align="right">675971</td>
+<td align="right">0.223</td>
+<td align="right">0.397</td>
+</tr>
+<tr class="odd">
+<td align="left">Scranton</td>
+<td align="left">PA</td>
+<td align="right">857487</td>
+<td align="right">0.209</td>
+<td align="right">0.180</td>
+</tr>
+<tr class="even">
+<td align="left">Honolulu</td>
+<td align="left">HI</td>
+<td align="right">876156</td>
+<td align="right">0.208</td>
+<td align="right">0.025</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>life_exp_model_results %&gt;% 
+  tail(n = 10) %&gt;% 
+  knitr::kable(digits = 3, caption = &quot;Worst 10 Cities&quot;)</code></pre>
+<table>
+<caption>Worst 10 Cities</caption>
+<thead>
+<tr class="header">
+<th align="left">Commuting Zone</th>
+<th align="left">State</th>
+<th align="right">Population (2000)</th>
+<th align="right">Bottom</th>
+<th align="right">Top</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cape Coral</td>
+<td align="left">FL</td>
+<td align="right">692265</td>
+<td align="right">-0.068</td>
+<td align="right">0.196</td>
+</tr>
+<tr class="even">
+<td align="left">Miami</td>
+<td align="left">FL</td>
+<td align="right">3955969</td>
+<td align="right">-0.071</td>
+<td align="right">0.319</td>
+</tr>
+<tr class="odd">
+<td align="left">Tucson</td>
+<td align="left">AZ</td>
+<td align="right">999882</td>
+<td align="right">-0.072</td>
+<td align="right">0.161</td>
+</tr>
+<tr class="even">
+<td align="left">Albuquerque</td>
+<td align="left">NM</td>
+<td align="right">755244</td>
+<td align="right">-0.077</td>
+<td align="right">0.122</td>
+</tr>
+<tr class="odd">
+<td align="left">Sarasota</td>
+<td align="left">FL</td>
+<td align="right">763795</td>
+<td align="right">-0.083</td>
+<td align="right">0.183</td>
+</tr>
+<tr class="even">
+<td align="left">Des Moines</td>
+<td align="left">IA</td>
+<td align="right">595842</td>
+<td align="right">-0.103</td>
+<td align="right">0.310</td>
+</tr>
+<tr class="odd">
+<td align="left">Bakersfield</td>
+<td align="left">CA</td>
+<td align="right">661645</td>
+<td align="right">-0.118</td>
+<td align="right">-0.129</td>
+</tr>
+<tr class="even">
+<td align="left">Knoxville</td>
+<td align="left">TN</td>
+<td align="right">727600</td>
+<td align="right">-0.121</td>
+<td align="right">0.112</td>
+</tr>
+<tr class="odd">
+<td align="left">Pensacola</td>
+<td align="left">FL</td>
+<td align="right">623252</td>
+<td align="right">-0.153</td>
+<td align="right">0.256</td>
+</tr>
+<tr class="even">
+<td align="left">Tampa</td>
+<td align="left">FL</td>
+<td align="right">2395997</td>
+<td align="right">-0.167</td>
+<td align="right">0.112</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="report-plot-modeled-life-expectancy-in-best-and-worst-cities" class="section level2">
+<h2>Report: Plot Modeled Life Expectancy in Best and Worst Cities</h2>
+<pre class="r"><code>plot_modeled_life_exp &lt;- function(income_quantile, group, data) {
+  data %&gt;% 
+    arrange(rank) %&gt;% 
+    mutate(
+      city = paste(czname, state, sep = &quot;, &quot;),
+      city = fct_inorder(city)
+    ) %&gt;% 
+    ggplot() +
+    aes(year, pred, color = city) +
+    geom_line() +
+    scale_y_continuous(limits = c(75, 90)) +
+    scale_x_continuous(breaks = seq(2002, 2018, 4)) +
+    labs(x = NULL, y = &quot;Life Expectancy&quot;, color = NULL) +
+    ggtitle(
+      if (group == &quot;Best&quot;) glue::glue(&quot;{income_quantile} Income Quantile&quot;),
+      glue::glue(&quot;{group} Life Expectancy Change&quot;)
+    ) +
+    theme_minimal()
+}
+
+life_exp_model %&gt;% 
+  mutate(
+    coef = map_dbl(est, ~ .x %&gt;% filter(term == &quot;year&quot;) %&gt;% pull(estimate))
+  ) %&gt;% 
+  group_by(income_quantile) %&gt;% 
+  mutate(rank = min_rank(desc(coef))) %&gt;% 
+  ungroup() %&gt;% 
+  filter(!between(rank, 7, 94)) %&gt;% 
+  mutate(group = case_when(rank &lt;= 10 ~ &quot;Best&quot;, TRUE ~ &quot;Worst&quot;)) %&gt;% 
+  arrange(rank) %&gt;% 
+  unnest(pred) %&gt;% 
+  nest(-income_quantile, -group) %&gt;% 
+  arrange(group, income_quantile) %&gt;% 
+  mutate(plot = pmap(., plot_modeled_life_exp)) %&gt;% 
+  pull(plot) %&gt;% 
+  cowplot::plot_grid(plotlist = ., ncol = 2)</code></pre>
+<p><img src="index_files/figure-html/model-rank-race-adjusted-life-expectancy-1.png" width="960" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

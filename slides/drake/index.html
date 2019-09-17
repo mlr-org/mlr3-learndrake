@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Reproducible machine learning workflows with drake</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Patrick Schratz" />
+    <meta name="date" content="2019-09-27" />
+    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/tachyons.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/moffitt-xaringan.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/moffitt-colors.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: left bottom hide-count
+background-image: url(assets/images/bench-accounting-xxeAftHHq6E-unsplash.jpg)
+background-size: 100%
+
+&lt;div class="talk-logo drake-logo"&gt;&lt;/div&gt;
+
+.talk-meta[
+.talk-title[
+# Reproducible Data Workflows
+]
+
+.talk-author[
+Patrick Schratz
+]
+
+.talk-date[
+September 27th, 2019
+]
+]
+
+---
+
+class: top hide-count center middle
+
+.f1.large[
+&lt;img class="icon-huge pr3" src="assets/images/desktop-download.svg" width="50px"/&gt;
+.code.moffitt-blue[usethis::use_course("mlr-org/mlr3-learndrake")]
+]
+
+.f1.large[
+&lt;img class="icon-huge pr3" src="assets/images/mark-github.svg" width="70px"/&gt;
+[github.com/.moffitt-orange[mlr-org/mlr3-learndrake]](https://github.com/mlr-org/mlr3-learndrake)
+]
+
+.f2.silver.center.mt5[Find someone to sit next to and share laptops]
+
+&lt;br&gt;&lt;br&gt;
+
+.small[
+(_Slide style and content borrowed from [gadenbui/drake-intro](https://github.com/gadenbuie/drake-intro)_ <i class="fas  fa-rocket "></i>)
+]
+
+---
+
+class: inverse center middle hide-count
+
+## What is drake?
+
+--
+
+![](assets/images/drake-meme.jpg)
+
+---
+
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-16.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-17.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-18.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-19.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-20.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-21.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-22.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-23.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-24.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-25.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-26.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-27.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-28.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-29.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-30.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-31.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/messy-workflow-32.jpg')
+background-size: contain
+
+---
+
+class: middle
+background-image: url('assets/images/drawn/messy-workflow-32.jpg')
+background-size: contain
+
+.f2.moffitt-bg-light-blue-o90.white.pa5.shadow-3[
+* Will this work when I come back to it later?
+
+* What happens if I re-run _everything_?
+
+* Am I certain that the results are still valid?
+]
+
+---
+
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/project-spectrum-33.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/project-spectrum-34.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/project-spectrum-35.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/project-spectrum-36.jpg')
+background-size: contain
+
+---
+
+
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-37.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-38.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-39.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-40.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-41.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-42.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-43.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-44.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-45.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-46.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-47.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-48.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-49.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-50.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-51.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-52.jpg')
+background-size: contain
+
+---
+
+class: hide-count animated fadeIn
+background-image: url('assets/images/drawn/drake-intro-53.jpg')
+background-size: contain
+
+---
+
+
+layout: true
+class: animated fadeIn
+background-image: url('assets/images/drake-infographic.svg')
+background-size: 100%
+background-position: 40% left
+
+(_borrowed from [ropensci/drake](https://github.com/ropensci/drake)_)
+
+---
+
+
+.bg-white.h-100.w-80.fixed.o-90.cover-2-3[
+&lt;!-- Cover left two items of drake infographic --&gt;
+]
+
+---
+
+.bg-white.h-100.w-80.fixed.o-90.cover-3[
+&lt;!-- Cover left items of drake infographic --&gt;
+]
+
+---
+
+&lt;!-- Full drake infographic --&gt;
+
+---
+layout: false
+
+## How does .pkg[drake] help you in your daily work?
+
+- Knows the execution order of your **complete** analysis
+  ```r
+  r_vis_drake_graph()
+  ```
+
+- Makes it possible to run your **complete** project
+  ```r
+  r_make()
+  ```
+
+- Tracks the runtime of each _target_ (= intermediate step)
+
+- Stores all _targets_ in a cache directory with on-demand loading
+
+  ```r
+  loadd()
+  ```
+
+- If you make a substantial change downstream, all subsequent _targets_ will be updated (plots, tables, models, etc.)
+
+
+---
+layout: false
+
+## But wait, there's more!
+
+There is a lot more that .pkg[drake] can do, including:
+
+- [Predict total runtime](https://ropenscilabs.github.io/drake-manual/time.html#predict-total-runtime) of your plan
+
+  ```r
+  r_predict_runtime()
+  ```
+
+- Support for [large plans](https://ropenscilabs.github.io/drake-manual/plans.html#large-plans) by using wildcards and functions `map()`, `cross()` and `combine()`
+
+- [Parallel computation](https://ropenscilabs.github.io/drake-manual/hpc.html#parallel-backends) of _targets_ via package .pkg[future]
+
+- Distribution of _targets_ across [HPC clusters](https://ropenscilabs.github.io/drake-manual/hpc.html) with support for many schedulers (SLURM, SGE, PBS, LSF) via package .pkg[clustermq]
+
+---
+layout: false
+
+## Personal FAQ (1/2)
+
++ What is the difference between `drake::make()` and `drake::r_make()`?
+
+&gt; `r_make()` runs in a fresh R session via package .pkg[callr] and sources the config before every run. No need to source the config yourself and then run `make(config)`. See also [drake-manual/safer-interactivity](https://ropenscilabs.github.io/drake-manual/projects.html#safer-interactivity).
+
++ How do I parallelize targets?
+
+&gt; By passing `prework = quote(future::plan(future.callr::callr, workers = &lt;n&gt;))` or a similar parallel plan to `drake_config()` in `_drake.R`. Do not use `future::plan()` within scripts/functions.
+
++ I have no idea what the status of my running computation is. Is there a way to see it?
+
+&gt; Yes, either use `drake::progress()`, `drake::finished()` or `drake::failed()`. Optionally make the output more verbose using `drake::progress() %&gt;% print(n = 200)`.
+
+---
+layout: false
+
+## Personal FAQ (2/2)
+
++ Everything in the drake manual is forcing me to use functions but I am used to scripts mainly.
+What is better with functions?
+
+&gt; Project structure and organization is eminently important. A function-based workflow enhances reproducibility and leads to a more clean project structure. See [this discussion](https://github.com/ropensci/drake/issues/994) for more information.
+
++ Is there a convenient way to load targets quickly?
+
+&gt; Yes! With the installation of .pkg[drake] there is an addin called "load targets under cursor" that lets you load the R object under your cursor when its bound to a keyboard shortcut. Mine is bound to "CTRL + L".
+
++ What about other addins and keyboard shortcuts?
+
+&gt; Take a look into the "Addins" menu in RStudio for a list of avaiable addins. I have the followings addin/shorcut bindings: `r_vis_drake_graph()` -&gt; "CTRL + Shift + V"; `r_outdated()` -&gt; "CTRL + Shift + O"; "load target under cursor" -&gt; "CTRL +L"
+
+---
+
+### Learn more with these resources
+
+.flex[
+.w-40.ph4[
+Drake
+
+* [User Manual](https://ropenscilabs.github.io/drake-manual/)
+* [Package Docs](https://ropensci.github.io/drake/)
+* [ropensci/drake](https://github.com/ropensci/drake)
+* [drake-faq](https://ropenscilabs.github.io/drake-manual/faq.html)
+* [wlandau/drake-examples](https://github.com/wlandau/drake-examples)
+* [wlandau/learndrake](https://github.com/wlandau/learndrake)
+* [mlr-org/mlr3-learndrake](https://github.com/mlr-org/mlr3-learndrake)
+]
+.w-60.ph4[
+Functions
+
+* [Advanced R: Functions](https://adv-r.hadley.nz/functions.html)
+* [Functions - Nice R Code](https://nicercode.github.io/guides/functions/)
+* [Programming with R: Creating Functions](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/)
+]
+]
+
+.footnote[
+**Icons** by [Github octicons](https://octicons.github.com/) and the following [Noun Project](https://thenounproject.com/search/?q=Report&amp;i=180805) icon creators:
+[Kirby Wu, TW](https://thenounproject.com/search/?q=json&amp;i=966215),
+[Iga](https://thenounproject.com/search/?q=document&amp;i=2711779),
+[Lil Squid](https://thenounproject.com/search/?q=report&amp;i=149914),
+[Wichai Wi](https://thenounproject.com/search/?q=results&amp;i=2294590),
+[Nick Kinling](https://thenounproject.com/search/?q=detour&amp;i=788361).
+
+**Built with** [rmarkdown](https://rmarkdown.rstudio.com), [xaringan](https://slides.yihui.name/xaringan), [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer), [remark.js](http://remarkjs.com/), [tachyons.css](http://tachyons.io/), [animate.css](https://daneden.github.io/animate.css/)
+]
+
+
+&lt;style type="text/css"&gt;
+.talk-logo {
+  width: 200px;
+  height: 231px;
+  position: absolute;
+  top: 25%;
+  left: 12%;
+}
+
+.drake-logo {
+  background-image: url('assets/images/drake-logo.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.talk-meta {
+  font-family: Overpass;
+  position: absolute;
+  text-align: left;
+  bottom: 10px;
+  left: 25px;
+}
+
+.talk-author {
+  color: #444;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+.talk-date {
+  color: #666;
+  font-size: 1.25em;
+  line-height: 0;
+}
+
+.icon-huge {
+  position: relative; 
+  top: 35px;
+}
+
+.icon-medium {
+  position: relative; 
+  top: 35px;
+  widht: 50%;
+}
+
+.cover-2-3 {
+  left: 33%;
+}
+
+.cover-3 {
+  left: 66%;
+}
+&lt;/style&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+  </body>
+</html>
