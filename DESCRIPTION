@@ -30,6 +30,7 @@ Imports:
     rstudioapi,
     stringr,
     tibble,
-    tidyr
+    tidyr,
+    workflowr
 Encoding: UTF-8
 LazyData: true
