@@ -34,6 +34,13 @@ rstudioapi::openProject("03-pipelines", newSession = TRUE)
 [mlr3](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3.html) 
 <img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
 
+# Other _drake_ learning resources
+
+- [presentations](https://ropenscilabs.github.io/drake-manual/index.html#presentations)
+- [drake-examples](https://github.com/wlandau/drake-examples)
+- [learndrake](https://github.com/wlandau/learndrake)
+- [real-world use cases](https://github.com/ropensci/drake#use-cases)
+
 # Acknowledgements
 
 - [Will Landau](https://github.com/wlandau) for developing and maintaing _drake_ in an awesome way
