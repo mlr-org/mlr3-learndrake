@@ -13,6 +13,8 @@ combine_benchmarks = function(...) {
 create_single_bm = function(learner, learner_id, task, measures,
   resampling_inner, resampling_outer, param_set, terminator) {
 
+  set.seed(123456)
+
   learner = lrn(learner)
   learner$id = learner_id
 

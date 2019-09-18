@@ -1,4 +1,5 @@
-settings_grid = tibble::tribble(
+benchmark_grid = tibble::tribble(
+
   # write learner/ParamSet grid
   ~learner, ~param_set, ~learner_id,
   "classif.svm", "param_set_svm1", "SVM-PS1",
@@ -9,20 +10,22 @@ settings_grid = tibble::tribble(
   tidyr::crossing(task = c("iris", "spam")) %>%
   dplyr::mutate(param_set_sym = syms(param_set))
 
-  ### alternatively: automate "pretty" learner id creation
-  # %>% dplyr::rowwise() %>% # string extraction won't work otherwise
-  # %>% mutate(learner_id = paste0(
-  #   toupper(str_split_fixed(learner, "[.]", n = 2)[2]),
-  #   "-",
-  #   paste0("PS", str_extract(param_set, "(\\d)+")),
-  #   "-",
-  #   task)
-  # )
+### alternatively: automate "pretty" learner id creation (remove the
+### "learner_id" column of the tribble() above if you want to try this)
+# %>% dplyr::rowwise() %>% # string extraction won't work otherwise
+# %>% mutate(learner_id = paste0(
+#   toupper(str_split_fixed(learner, "[.]", n = 2)[2]),
+#   "-",
+#   paste0("PS", str_extract(param_set, "(\\d)+")),
+#   "-",
+#   task)
+# )
 
 benchmark_plan = drake_plan(
 
   bm = target(
 
+    # we apply 'create_single_bm() to each row in "benchmark_grid" using `map()`
     create_single_bm(
       learner = learner,
       learner_id = learner_id,
@@ -34,7 +37,7 @@ benchmark_plan = drake_plan(
       terminator = terminator
       ),
 
-    transform = map(.data = !!settings_grid,
+    transform = map(.data = !!benchmark_grid,
       .id = c(learner, task) # creation of bm_* target IDs
     )
   ),

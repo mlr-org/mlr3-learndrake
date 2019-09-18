@@ -1,12 +1,11 @@
 param_sets_plan = drake_plan(
-  param_set_svm1 = target({
-    foo = ParamSet$new(params = list(
+  param_set_svm1 = target(
+    ParamSet$new(params = list(
       ParamDbl$new("cost", lower = 0, upper = 100),
       ParamDbl$new("gamma", lower = 0, upper = 100)
     ))
-    return(foo)
-  }
   ),
+
   param_set_svm2 = target({
     foo = ParamSet$new(params = list(
       ParamDbl$new("cost", lower = -5, upper = 5),
