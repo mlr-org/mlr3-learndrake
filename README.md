@@ -1,4 +1,3 @@
-
 # mlr3-learndrake
 
 <!-- badges: start -->
@@ -35,3 +34,8 @@ rstudioapi::openProject("03-pipelines", newSession = TRUE)
 [mlr3](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3.html) 
 <img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
 
+# Acknowledgements
+
+- [Will Landau](https://github.com/wlandau) for developing and maintaing _drake_ in an awesome way
+- [Garrick Aden-Buie](https://github.com/gadenbuie) for the great slides about _drake_
+- [The mlr3 team](https://github.com/mlr-org/mlr3) for developing the mlr3 package framework
