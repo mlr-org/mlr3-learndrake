@@ -24,8 +24,13 @@ To open the respective example projects, call one of the following
 ```r
 rstudioapi::openProject("01-intro", newSession = TRUE)
 rstudioapi::openProject("02-benchmark", newSession = TRUE)
-rstudioapi::openProject("03-pipelines", newSession = TRUE)
 ```
+
+## Examples
+
+**01-intro**: Hyperparameter tuning and training of a Random Forest classifier on the "iris" dataset
+
+**02-benchmark**: Benchmark analysis of multiple learners using different hyperarameter ranges on the "iris" and "spam" dataset
 
 ## Slides
 
