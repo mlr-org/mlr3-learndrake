@@ -39,6 +39,9 @@ rstudioapi::openProject("02-benchmark", newSession = TRUE)
 [mlr3](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3.html) 
 <img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
 
+[mlr3pipelines](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3pipelines.html) 
+<img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
+
 # Other _drake_ learning resources
 
 - [presentations](https://ropenscilabs.github.io/drake-manual/index.html#presentations)
