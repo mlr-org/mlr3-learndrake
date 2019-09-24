@@ -188,6 +188,8 @@ layout: false
 
 # `_drake.R`
 
+.flex[
+.w-40[
 The main settings file
 
 - sources all R functions
@@ -197,8 +199,14 @@ The main settings file
 - sets the execution parameters in `drake_config()`
 
 - called by `r_make()` at the start of every run
+]
 
-(include screenshot)
+.w-70[
+
+<center><img src="assets/images/drake-config.png" width="620px"/></center>
+
+]
+]
 
 ---
 
@@ -222,9 +230,9 @@ The main settings file
 
 # `r_vis_drake_graph()`
 
-Show how all _targets_ are connected
+Shows how all _targets_ are connected
 
-[screenshot]
+<center><img src="assets/images/r-vis-drake-graph.png" width="480px"/></center>
 
 ---
 
