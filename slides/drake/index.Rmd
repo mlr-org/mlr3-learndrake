@@ -6,10 +6,11 @@ output:
   xaringan::moon_reader:
     lib_dir: libs
     css:
-      - "assets/css/tachyons.min.css" 
+      - assets/css/tachyons.min.css
       - assets/css/animate.css
-      - assets/css/moffitt-xaringan.css
+      - assets/css/xaringanthemer.css
       - assets/css/moffitt-colors.css
+      - assets/css/extra.css
     seal: false
     mathjax: NULL
     chakra: libs/remark-latest.min.js
@@ -18,7 +19,6 @@ output:
       slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
-      ratio: "16:9"
       countIncrementalSlides: true
 ---
 
@@ -33,6 +33,8 @@ knitr::opts_chunk$set(
 class: left bottom hide-count
 background-image: url(assets/images/bench-accounting-xxeAftHHq6E-unsplash.jpg)
 background-size: 100%
+background-position: top
+background-color: #eff0f2
 
 <div class="talk-logo drake-logo"></div>
 
@@ -44,6 +46,8 @@ background-size: 100%
 .talk-author[
 Patrick Schratz
 ]
+
+
 
 .talk-date[
 September 27th, 2019
@@ -175,32 +179,72 @@ background-position: 40% left
 
 ---
 layout: false
+class: inverse middle center
 
-## How does .pkg[drake] help you in your daily work?
-
-- Knows the execution order of your **complete** analysis
-  ```r
-  r_vis_drake_graph()
-  ```
-
-- Makes it possible to run your **complete** project
-  ```r
-  r_make()
-  ```
-
-- Tracks the runtime of each _target_ (= intermediate step)
-
-- Stores all _targets_ in a cache directory with on-demand loading
-
-  ```r
-  loadd()
-  ```
-
-- If you make a substantial change downstream, all subsequent _targets_ will be updated (plots, tables, models, etc.)
-
+# drake Essentials
 
 ---
 layout: false
+
+# `_drake.R`
+
+The main settings file
+
+- sources all R functions
+
+- sources all "drake-plans" and binds them together
+
+- sets the execution parameters in `drake_config()`
+
+- called by `r_make()` at the start of every run
+
+(include screenshot)
+
+---
+
+## .pkg[drake] "targets"
+
+- _targets_ are simple R objects which **know their dependencies**
+
+- _targets_ represent all intermediate or final results of your project
+
+- _targets_ live in the **drake-cache** (`.drake` directory) and can from there be loaded into the global environment using `loadd()`
+
+#### Advantages
+
+- No need to use `saveRDS()`/`save()` anymore to store intermediate outputs
+
+- Quick-load _targets_ under cursor in RStudio via addin
+
+- visualize dependencies via `r_vis_drake_graph()`
+
+---
+
+# `r_vis_drake_graph()`
+
+Show how all _targets_ are connected
+
+[screenshot]
+
+---
+
+## How does drake help you in your daily work?
+
+- Knows the execution order of your **complete** analysis
+```r
+r_vis_drake_graph()
+```
+
+- Enables **running** your complete project in **one call**
+```r
+r_make()
+```
+
+- Tracks metadata of each _target_ (runtime, etc.)
+
+- If you make a substantial change downstream, all subsequent _targets_ will be updated (plots, tables, models, etc.)
+
+---
 
 ## But wait, there's more!
 
@@ -208,50 +252,19 @@ There is a lot more that .pkg[drake] can do, including:
 
 - [Predict total runtime](https://ropenscilabs.github.io/drake-manual/time.html#predict-total-runtime) of your plan
 
-  ```r
-  r_predict_runtime()
-  ```
+```r
+r_predict_runtime()
+```
 
 - Support for [large plans](https://ropenscilabs.github.io/drake-manual/plans.html#large-plans) by using wildcards and functions `map()`, `cross()` and `combine()`
 
-- [Parallel computation](https://ropenscilabs.github.io/drake-manual/hpc.html#parallel-backends) of _targets_ via package .pkg[future]
+- [Parallel computation](https://ropenscilabs.github.io/drake-manual/hpc.html#parallel-backends) of _targets_ via packages
 
-- Distribution of _targets_ across [HPC clusters](https://ropenscilabs.github.io/drake-manual/hpc.html) with support for many schedulers (SLURM, SGE, PBS, LSF) via package .pkg[clustermq]
+- .pkg[future] 
 
----
-layout: false
+- .pkg[clustermq] (HPC)
 
-## Personal FAQ (1/2)
-
-+ What is the difference between `drake::make()` and `drake::r_make()`?
-
-> `r_make()` runs in a fresh R session via package .pkg[callr] and sources the config before every run. No need to source the config yourself and then run `make(config)`. See also [drake-manual/safer-interactivity](https://ropenscilabs.github.io/drake-manual/projects.html#safer-interactivity).
-
-+ How do I parallelize targets?
-
-> By passing `prework = quote(future::plan(future.callr::callr, workers = <n>))` or a similar parallel plan to `drake_config()` in `_drake.R`. Do not use `future::plan()` within scripts/functions.
-
-+ I have no idea what the status of my running computation is. Is there a way to see it?
-
-> Yes, either use `drake::progress()`, `drake::finished()` or `drake::failed()`. Optionally make the output more verbose using `drake::progress() %>% print(n = 200)`.
-
----
-layout: false
-
-## Personal FAQ (2/2)
-
-+ Everything in the drake manual is forcing me to use functions but I am used to scripts mainly.
-What is better with functions?
-
-> Project structure and organization is eminently important. A function-based workflow enhances reproducibility and leads to a more clean project structure. See [this discussion](https://github.com/ropensci/drake/issues/994) for more information.
-
-+ Is there a convenient way to load targets quickly?
-
-> Yes! With the installation of .pkg[drake] there is an addin called "load targets under cursor" that lets you load the R object under your cursor when its bound to a keyboard shortcut. Mine is bound to "CTRL + L".
-
-+ What about other addins and keyboard shortcuts?
-
-> Take a look into the "Addins" menu in RStudio for a list of avaiable addins. I have the followings addin/shorcut bindings: `r_vis_drake_graph()` -> "CTRL + Shift + V"; `r_outdated()` -> "CTRL + Shift + O"; "load target under cursor" -> "CTRL +L"
+- Support for many HPC schedulers (SLURM, SGE, PBS, LSF) via package .pkg[clustermq]
 
 ---
 
@@ -278,7 +291,7 @@ Functions
 ]
 ]
 
-.footnote[
+.small[
 **Icons** by [Github octicons](https://octicons.github.com/) and the following [Noun Project](https://thenounproject.com/search/?q=Report&i=180805) icon creators:
 [Kirby Wu, TW](https://thenounproject.com/search/?q=json&i=966215),
 [Iga](https://thenounproject.com/search/?q=document&i=2711779),
@@ -289,6 +302,45 @@ Functions
 **Built with** [rmarkdown](https://rmarkdown.rstudio.com), [xaringan](https://slides.yihui.name/xaringan), [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer), [remark.js](http://remarkjs.com/), [tachyons.css](http://tachyons.io/), [animate.css](https://daneden.github.io/animate.css/)
 ]
 
+---
+layout: false
+
+## Personal FAQ (1/2)
+
+.small[
++ What is the difference between `drake::make()` and `drake::r_make()`?
+
+> `r_make()` runs in a fresh R session via package .pkg[callr] and sources the config before every run. No need to source the config yourself and then run `make(config)`. See also [drake-manual/safer-interactivity](https://ropenscilabs.github.io/drake-manual/projects.html#safer-interactivity).
+
++ How do I parallelize code within targets?
+
+> By passing `prework = quote(future::plan(future.callr::callr, workers = <n>))` or a similar parallel plan to `drake_config()` in `_drake.R`. Do not use `future::plan()` within scripts/functions.
+
++ I have no idea what the status of my running computation is. Is there a way to see it?
+
+> Yes, either use `drake::progress()`, `drake::finished()` or `drake::failed()`. Optionally make the output more verbose using `drake::progress() %>% print(n = 200)`.
+]
+
+---
+layout: false
+
+## Personal FAQ (2/2)
+
+.small[
++ Everything in the drake manual is forcing me to use functions but I am used to scripts mainly.
+What is better with functions?
+
+> Project structure and organization is eminently important. A function-based workflow enhances reproducibility and leads to a more clean project structure. See [this discussion](https://github.com/ropensci/drake/issues/994) for more information.
+
++ Is there a convenient way to load targets quickly?
+
+> Yes! With the installation of .pkg[drake] there is an addin called "load targets under cursor" that lets you load the R object under your cursor when its bound to a keyboard shortcut. Mine is bound to "CTRL + L".
+
++ What about other addins and keyboard shortcuts?
+
+> Take a look into the "Addins" menu in RStudio for a list of avaiable addins. I have the followings addin/shorcut bindings: `r_vis_drake_graph()` -> "CTRL + Shift + V"; `r_outdated()` -> "CTRL + Shift + O"; "load target under cursor" -> "CTRL +L"
+
+]
 
 ```{css echo=FALSE}
 .talk-logo {
@@ -315,14 +367,14 @@ Functions
 
 .talk-author {
   color: #444;
-  font-weight: bold;
+    font-weight: bold;
   font-size: 1.5em;
   line-height: 1em;
 }
 
 .talk-date {
   color: #666;
-  font-size: 1.25em;
+    font-size: 1.25em;
   line-height: 0;
 }
 
@@ -348,10 +400,10 @@ Functions
 
 ```{r xaringanthemer, include=FALSE, eval=FALSE}
 library(xaringanthemer)
-style_duo_accent(
-  outfile = here::here("docs", "moffitt-xaringan.css"),
+duo_accent(
+  outfile = here::here("slides/drake/assets/css/xaringanthemer.css"),
   primary_color        = "#00589A",
-  secondary_color      = "#82c878",
+  secondary_color      = "#1c356b",
   inverse_header_color = "white",
   inverse_text_color   = "white",
   text_bold_color      = "#eb1455",
@@ -365,95 +417,101 @@ style_duo_accent(
   extra_fonts = list(
     google_font("Lora", "300", "300i", "400", "400i"),
     google_font("Overpass", "300", "600")
+  ))
+extra_css = list(
+  ".remark-slide-content" = list(padding = "0px 70px 0 50px"),
+  '.title-slide' = list(
+    "text-align" = "left"
   ),
-  extra_css = list(
-    ".remark-slide-content" = list(padding = "0px 70px 0 50px"),
-    '.title-slide' = list(
-      "text-align" = "left"
-    ),
-    ".title-slide h1" = list(
-      "margin-bottom" = "4em"
-    ),
-    ".pkg" = list(
-      "color"             = "#53804d",
-      "font-weight"       = 300,
-      "font-size"         = "95%",
-      "font-family"       = "IBM Plex Mono",
-      padding             = "1px 4px",
-      "background-color"  = "#eff4ef",
-      "border-radius"     = "4px",
-      "border"            = "1px solid #82c878"
-    ),
-    ".muted" = list(
-      color = "#777"
-    ),
-    ".hl" = list(
-      "background-color" = "rgba(255, 255, 0, 0.5)",
-      padding            = "1px 4px"
-    ),
-    ".footer" = list(
-      position = "absolute",
-      bottom = "3%",
-      left = "5%",
-      opacity = "75%"
-    ),
-    ".bordered" = list(
-      border = "#777 solid 2px"
-    ),
-    ".top" = list(
-      "vertical-align" = "top"
-    ),
-    blockquote = list(
-      "font-family" = "Lora",
-      "font-weight" = 400,
-      "font-style" = "italic",
-      color = "#777"
-    ),
-    ".large" = list(
-      "font-size" = "1.5em"
-    ),
-    ".big" = list(
-      "font-size" = "2em"
-    ),
-    ".third" = list(
-      width = "33%"
-    ),
-    ".two-third" = list(
-      width = "66%"
-    ),
-    ".right-column img" = list(
-      "max-height" = "35vh",
-      "margin-top" = "-2em"
-    ),
-    ".hide-count .remark-slide-number" = list(
-      display = "none"
-    ),
-    "::-mox-selection" = list(
-      "background-color" = "rgba(255, 255, 0, 0.5)"
-    ),
-    "::selection" = list(
-      "background-color" = "rgba(255, 255, 0, 0.5)"
-    ),
-    "kbd" = list(
-      "padding"               = "0.1em 0.6em",
-      "border"                = "1px solid #ccc",
-      "font-family"           = "Arial,Helvetica,sans-serif",
-      "font-family"           = "'IBM Plex Mono',monospace",
-      "background-color"      = "#f7f7f7",
-      "color"                 = "#333",
-      "-moz-box-shadow"       = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
-      "-webkit-box-shadow"    = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
-      "box-shadow"            = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
-      "-moz-border-radius"    = "3px",
-      "-webkit-border-radius" = "3px",
-      "border-radius"         = "3px",
-      "display"               = "inline-block",
-      "margin"                = "0 0.1em",
-      "text-shadow"           = "0 1px 0 #fff",
-      "line-height"           = "1.4",
-      "white-space"           = "nowrap"
-    )
+  ".title-slide" = list(
+    "color" = "#eeeff1"
+  ),
+  ".title-slide h1" = list(
+    "margin-bottom" = "4em"
+  ),
+  ".pkg" = list(
+    "color"             = "#53804d",
+    "font-weight"       = 300,
+    "font-size"         = "95%",
+    "font-family"       = "IBM Plex Mono",
+    "padding"             = "1px 4px",
+    "background-color"  = "#eff4ef",
+    "border-radius"     = "4px",
+    "border"            = "1px solid #82c878"
+  ),
+  ".muted" = list(
+    "color" = "#777"
+  ),
+  ".hl" = list(
+    "background-color" = "rgba(255, 255, 0, 0.5)",
+    "padding"            = "1px 4px"
+  ),
+  ".footer" = list(
+    "position" = "absolute",
+    "bottom" = "3%",
+    "left" = "5%",
+    "opacity" = "75%"
+  ),
+  ".bordered" = list(
+    "border" = "#777 solid 2px"
+  ),
+  ".top" = list(
+    "vertical-align" = "top"
+  ),
+  "blockquote" = list(
+    "font-family" = "Lora",
+    "font-weight" = 400,
+    "font-style" = "italic",
+    "color" = "#777"
+  ),
+  ".large" = list(
+    "font-size" = "1.5em"
+  ),
+  ".big" = list(
+    "font-size" = "2em"
+  ),
+  ".small" = list(
+    "font-size" = "20px"
+  ),
+  ".third" = list(
+    "width" = "33%"
+  ),
+  ".two-third" = list(
+    "width" = "66%"
+  ),
+  ".right-column img" = list(
+    "max-height" = "35vh",
+    "margin-top" = "-2em"
+  ),
+  ".hide-count .remark-slide-number" = list(
+    "display" = "none"
+  ),
+  "::-mox-selection" = list(
+    "background-color" = "rgba(255, 255, 0, 0.5)"
+  ),
+  "::selection" = list(
+    "background-color" = "rgba(255, 255, 0, 0.5)"
+  ),
+  "kbd" = list(
+    "padding"               = "0.1em 0.6em",
+    "border"                = "1px solid #ccc",
+    "font-family"           = "Arial,Helvetica,sans-serif",
+    "font-family"           = "'IBM Plex Mono',monospace",
+    "background-color"      = "#f7f7f7",
+    "color"                 = "#333",
+    "-moz-box-shadow"       = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
+    "-webkit-box-shadow"    = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
+    "box-shadow"            = "0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset",
+    "-moz-border-radius"    = "3px",
+    "-webkit-border-radius" = "3px",
+    "border-radius"         = "3px",
+    "display"               = "inline-block",
+    "margin"                = "0 0.1em",
+    "text-shadow"           = "0 1px 0 #fff",
+    "line-height"           = "1.4",
+    "white-space"           = "nowrap"
   )
 )
+write_extra_css(extra_css, here::here("slides/drake/assets/css/extra.css"))
 ```
 

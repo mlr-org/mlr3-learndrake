@@ -8,8 +8,9 @@
     <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/tachyons.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/moffitt-xaringan.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/xaringanthemer.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/moffitt-colors.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/extra.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -21,6 +22,8 @@
 class: left bottom hide-count
 background-image: url(assets/images/bench-accounting-xxeAftHHq6E-unsplash.jpg)
 background-size: 100%
+background-position: top
+background-color: #eff0f2
 
 &lt;div class="talk-logo drake-logo"&gt;&lt;/div&gt;
 
@@ -32,6 +35,8 @@ background-size: 100%
 .talk-author[
 Patrick Schratz
 ]
+
+
 
 .talk-date[
 September 27th, 2019
@@ -346,32 +351,72 @@ background-position: 40% left
 
 ---
 layout: false
+class: inverse middle center
 
-## How does .pkg[drake] help you in your daily work?
-
-- Knows the execution order of your **complete** analysis
-  ```r
-  r_vis_drake_graph()
-  ```
-
-- Makes it possible to run your **complete** project
-  ```r
-  r_make()
-  ```
-
-- Tracks the runtime of each _target_ (= intermediate step)
-
-- Stores all _targets_ in a cache directory with on-demand loading
-
-  ```r
-  loadd()
-  ```
-
-- If you make a substantial change downstream, all subsequent _targets_ will be updated (plots, tables, models, etc.)
-
+# drake Essentials
 
 ---
 layout: false
+
+# `_drake.R`
+
+The main settings file
+
+- sources all R functions
+
+- sources all "drake-plans" and binds them together
+
+- sets the execution parameters in `drake_config()`
+
+- called by `r_make()` at the start of every run
+
+(include screenshot)
+
+---
+
+## .pkg[drake] "targets"
+
+- _targets_ are simple R objects which **know their dependencies**
+
+- _targets_ represent all intermediate or final results of your project
+
+- _targets_ live in the **drake-cache** (`.drake` directory) and can from there be loaded into the global environment using `loadd()`
+
+#### Advantages
+
+- No need to use `saveRDS()`/`save()` anymore to store intermediate outputs
+
+- Quick-load _targets_ under cursor in RStudio via addin
+
+- visualize dependencies via `r_vis_drake_graph()`
+
+---
+
+# `r_vis_drake_graph()`
+
+Show how all _targets_ are connected
+
+[screenshot]
+
+---
+
+## How does drake help you in your daily work?
+
+- Knows the execution order of your **complete** analysis
+```r
+r_vis_drake_graph()
+```
+
+- Enables **running** your complete project in **one call**
+```r
+r_make()
+```
+
+- Tracks metadata of each _target_ (runtime, etc.)
+
+- If you make a substantial change downstream, all subsequent _targets_ will be updated (plots, tables, models, etc.)
+
+---
 
 ## But wait, there's more!
 
@@ -379,50 +424,19 @@ There is a lot more that .pkg[drake] can do, including:
 
 - [Predict total runtime](https://ropenscilabs.github.io/drake-manual/time.html#predict-total-runtime) of your plan
 
-  ```r
-  r_predict_runtime()
-  ```
+```r
+r_predict_runtime()
+```
 
 - Support for [large plans](https://ropenscilabs.github.io/drake-manual/plans.html#large-plans) by using wildcards and functions `map()`, `cross()` and `combine()`
 
-- [Parallel computation](https://ropenscilabs.github.io/drake-manual/hpc.html#parallel-backends) of _targets_ via package .pkg[future]
+- [Parallel computation](https://ropenscilabs.github.io/drake-manual/hpc.html#parallel-backends) of _targets_ via packages
 
-- Distribution of _targets_ across [HPC clusters](https://ropenscilabs.github.io/drake-manual/hpc.html) with support for many schedulers (SLURM, SGE, PBS, LSF) via package .pkg[clustermq]
+- .pkg[future] 
 
----
-layout: false
+- .pkg[clustermq] (HPC)
 
-## Personal FAQ (1/2)
-
-+ What is the difference between `drake::make()` and `drake::r_make()`?
-
-&gt; `r_make()` runs in a fresh R session via package .pkg[callr] and sources the config before every run. No need to source the config yourself and then run `make(config)`. See also [drake-manual/safer-interactivity](https://ropenscilabs.github.io/drake-manual/projects.html#safer-interactivity).
-
-+ How do I parallelize targets?
-
-&gt; By passing `prework = quote(future::plan(future.callr::callr, workers = &lt;n&gt;))` or a similar parallel plan to `drake_config()` in `_drake.R`. Do not use `future::plan()` within scripts/functions.
-
-+ I have no idea what the status of my running computation is. Is there a way to see it?
-
-&gt; Yes, either use `drake::progress()`, `drake::finished()` or `drake::failed()`. Optionally make the output more verbose using `drake::progress() %&gt;% print(n = 200)`.
-
----
-layout: false
-
-## Personal FAQ (2/2)
-
-+ Everything in the drake manual is forcing me to use functions but I am used to scripts mainly.
-What is better with functions?
-
-&gt; Project structure and organization is eminently important. A function-based workflow enhances reproducibility and leads to a more clean project structure. See [this discussion](https://github.com/ropensci/drake/issues/994) for more information.
-
-+ Is there a convenient way to load targets quickly?
-
-&gt; Yes! With the installation of .pkg[drake] there is an addin called "load targets under cursor" that lets you load the R object under your cursor when its bound to a keyboard shortcut. Mine is bound to "CTRL + L".
-
-+ What about other addins and keyboard shortcuts?
-
-&gt; Take a look into the "Addins" menu in RStudio for a list of avaiable addins. I have the followings addin/shorcut bindings: `r_vis_drake_graph()` -&gt; "CTRL + Shift + V"; `r_outdated()` -&gt; "CTRL + Shift + O"; "load target under cursor" -&gt; "CTRL +L"
+- Support for many HPC schedulers (SLURM, SGE, PBS, LSF) via package .pkg[clustermq]
 
 ---
 
@@ -449,7 +463,7 @@ Functions
 ]
 ]
 
-.footnote[
+.small[
 **Icons** by [Github octicons](https://octicons.github.com/) and the following [Noun Project](https://thenounproject.com/search/?q=Report&amp;i=180805) icon creators:
 [Kirby Wu, TW](https://thenounproject.com/search/?q=json&amp;i=966215),
 [Iga](https://thenounproject.com/search/?q=document&amp;i=2711779),
@@ -460,6 +474,45 @@ Functions
 **Built with** [rmarkdown](https://rmarkdown.rstudio.com), [xaringan](https://slides.yihui.name/xaringan), [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer), [remark.js](http://remarkjs.com/), [tachyons.css](http://tachyons.io/), [animate.css](https://daneden.github.io/animate.css/)
 ]
 
+---
+layout: false
+
+## Personal FAQ (1/2)
+
+.small[
++ What is the difference between `drake::make()` and `drake::r_make()`?
+
+&gt; `r_make()` runs in a fresh R session via package .pkg[callr] and sources the config before every run. No need to source the config yourself and then run `make(config)`. See also [drake-manual/safer-interactivity](https://ropenscilabs.github.io/drake-manual/projects.html#safer-interactivity).
+
++ How do I parallelize code within targets?
+
+&gt; By passing `prework = quote(future::plan(future.callr::callr, workers = &lt;n&gt;))` or a similar parallel plan to `drake_config()` in `_drake.R`. Do not use `future::plan()` within scripts/functions.
+
++ I have no idea what the status of my running computation is. Is there a way to see it?
+
+&gt; Yes, either use `drake::progress()`, `drake::finished()` or `drake::failed()`. Optionally make the output more verbose using `drake::progress() %&gt;% print(n = 200)`.
+]
+
+---
+layout: false
+
+## Personal FAQ (2/2)
+
+.small[
++ Everything in the drake manual is forcing me to use functions but I am used to scripts mainly.
+What is better with functions?
+
+&gt; Project structure and organization is eminently important. A function-based workflow enhances reproducibility and leads to a more clean project structure. See [this discussion](https://github.com/ropensci/drake/issues/994) for more information.
+
++ Is there a convenient way to load targets quickly?
+
+&gt; Yes! With the installation of .pkg[drake] there is an addin called "load targets under cursor" that lets you load the R object under your cursor when its bound to a keyboard shortcut. Mine is bound to "CTRL + L".
+
++ What about other addins and keyboard shortcuts?
+
+&gt; Take a look into the "Addins" menu in RStudio for a list of avaiable addins. I have the followings addin/shorcut bindings: `r_vis_drake_graph()` -&gt; "CTRL + Shift + V"; `r_outdated()` -&gt; "CTRL + Shift + O"; "load target under cursor" -&gt; "CTRL +L"
+
+]
 
 &lt;style type="text/css"&gt;
 .talk-logo {
@@ -486,14 +539,14 @@ Functions
 
 .talk-author {
   color: #444;
-  font-weight: bold;
+    font-weight: bold;
   font-size: 1.5em;
   line-height: 1em;
 }
 
 .talk-date {
   color: #666;
-  font-size: 1.25em;
+    font-size: 1.25em;
   line-height: 0;
 }
 
@@ -523,7 +576,6 @@ Functions
 "slideNumberFormat": "%current%",
 "highlightStyle": "github",
 "highlightLines": true,
-"ratio": "16:9",
 "countIncrementalSlides": true
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
@@ -564,7 +616,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {
