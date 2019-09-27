@@ -14,8 +14,8 @@ plan = bind_plans(param_sets_plan, resampling_plan, tuning_plan,
 
 # Set the config ---------------------------------------------------------------
 
-drake_config(plan, verbose = 2,
+drake_config(plan, verbose = 2, lock_envir = FALSE,
   # internal parallelization
   prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
-  console_log_file = "log/drake.log")
+  console_log_file = here::here("log/drake.log"))
