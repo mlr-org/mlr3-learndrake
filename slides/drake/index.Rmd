@@ -6,11 +6,13 @@ output:
   xaringan::moon_reader:
     lib_dir: libs
     css:
+      - assets/css/xaringanthemer.css
       - assets/css/tachyons.min.css
       - assets/css/animate.css
       - assets/css/xaringanthemer.css
       - assets/css/moffitt-colors.css
       - assets/css/extra.css
+      - assets/css/xaringanthemer.css
     seal: false
     mathjax: NULL
     chakra: libs/remark-latest.min.js
@@ -376,13 +378,15 @@ What is better with functions?
 .talk-author {
   color: #444;
     font-weight: bold;
+  font-family: "Work Sans";
   font-size: 1.5em;
   line-height: 1em;
 }
 
 .talk-date {
   color: #666;
-    font-size: 1.25em;
+  font-size: 1.25em;
+  font-family: "Work Sans";
   line-height: 0;
 }
 
