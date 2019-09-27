@@ -10,7 +10,9 @@ sourceDirectory("R")
 # Create plans -----------------------------------------------------------------
 
 plan = bind_plans(param_sets_plan, resampling_plan, tuning_plan,
-  measures_plan, benchmark_plan, report_plan)
+  measures_plan, benchmark_plan,
+  # report_plan
+  )
 
 # Set the config ---------------------------------------------------------------
 

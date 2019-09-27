@@ -914,3 +914,255 @@ Patricks-MacBook-Pro.local | 81725 | 2019-09-27 07:42:09.990782 +0200 GMT | benc
 Patricks-MacBook-Pro.local | 81725 | 2019-09-27 07:42:09.992866 +0200 GMT | benchmark_viz | fail benchmark_viz
 Patricks-MacBook-Pro.local | 81725 | 2019-09-27 07:42:09.995660 +0200 GMT |  | Target `benchmark_viz` failed. Call `diagnose(benchmark_viz)` for details. Error message:
   cannot open the connection
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.818697 +0200 GMT |  | begin drake_config()
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.835697 +0200 GMT |  | cache /Users/pjs/git/mlr-org/mlr3-learndrake/02-benchmark/.drake
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.837137 +0200 GMT |  | analyze environment
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.839183 +0200 GMT | report_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.839690 +0200 GMT | param_sets_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.839993 +0200 GMT | benchmark_grid | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.840260 +0200 GMT | create_single_bm | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.842509 +0200 GMT | measures_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.842818 +0200 GMT | tuning_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.843164 +0200 GMT | combine_benchmarks | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.844196 +0200 GMT | resampling_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.844505 +0200 GMT | plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.844937 +0200 GMT | benchmark_plan | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.846263 +0200 GMT |  | get knitr hash
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.851865 +0200 GMT | param_set_svm1 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.853359 +0200 GMT | param_set_svm2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.855035 +0200 GMT | param_set_knn1 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.856035 +0200 GMT | param_set_knn2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.856846 +0200 GMT | resampling_inner | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.857747 +0200 GMT | resampling_outer | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.858633 +0200 GMT | terminator | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.859184 +0200 GMT | measures | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.859709 +0200 GMT | bm_classif.kknn_iris | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.860557 +0200 GMT | bm_classif.kknn_spam | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.861289 +0200 GMT | bm_classif.kknn_iris_2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.862029 +0200 GMT | bm_classif.kknn_spam_2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.862759 +0200 GMT | bm_classif.svm_iris | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.863540 +0200 GMT | bm_classif.svm_spam | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.864265 +0200 GMT | bm_classif.svm_iris_2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.864984 +0200 GMT | bm_classif.svm_spam_2 | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.865680 +0200 GMT | agg | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.866509 +0200 GMT | agg_task_iris | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.867325 +0200 GMT | agg_task_spam | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.867968 +0200 GMT | benchmark_viz | analyze
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.890006 +0200 GMT |  | set knitr files
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.891571 +0200 GMT | report_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.891988 +0200 GMT | param_sets_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.892257 +0200 GMT | benchmark_grid | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.892515 +0200 GMT | create_single_bm | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.892787 +0200 GMT | measures_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.893049 +0200 GMT | tuning_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.893316 +0200 GMT | combine_benchmarks | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.893572 +0200 GMT | resampling_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.893831 +0200 GMT | plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.894160 +0200 GMT | benchmark_plan | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.894419 +0200 GMT | param_set_svm1 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.894675 +0200 GMT | param_set_svm2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.894933 +0200 GMT | param_set_knn1 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.895184 +0200 GMT | param_set_knn2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.895436 +0200 GMT | resampling_inner | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.895690 +0200 GMT | resampling_outer | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.895944 +0200 GMT | terminator | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.896267 +0200 GMT | measures | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.896610 +0200 GMT | bm_classif.kknn_iris | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.896939 +0200 GMT | bm_classif.kknn_spam | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.897233 +0200 GMT | bm_classif.kknn_iris_2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.897515 +0200 GMT | bm_classif.kknn_spam_2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.897797 +0200 GMT | bm_classif.svm_iris | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.898078 +0200 GMT | bm_classif.svm_spam | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.898358 +0200 GMT | bm_classif.svm_iris_2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.898710 +0200 GMT | bm_classif.svm_spam_2 | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.898988 +0200 GMT | agg | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.899383 +0200 GMT | agg_task_iris | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.899930 +0200 GMT | agg_task_spam | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.900383 +0200 GMT | benchmark_viz | connect
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.901103 +0200 GMT |  | connect output files
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.907727 +0200 GMT |  | end drake_config()
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:06.908349 +0200 GMT |  | begin make()
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.862910 +0200 GMT | benchmark_grid | import
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.865772 +0200 GMT | combine_benchmarks | import
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.868814 +0200 GMT | file Rmd/visualization-report.Rmd | import
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.873260 +0200 GMT | create_single_bm | import
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.876182 +0200 GMT |  | begin outdated()
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.877196 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.879775 +0200 GMT | param_set_svm1 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.881337 +0200 GMT | param_set_svm2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.882865 +0200 GMT | param_set_knn1 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.884440 +0200 GMT | param_set_knn2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.886348 +0200 GMT | resampling_inner | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.888150 +0200 GMT | resampling_outer | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.889991 +0200 GMT | terminator | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.891590 +0200 GMT | measures | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.892097 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.896162 +0200 GMT | bm_classif.svm_spam | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.900290 +0200 GMT | bm_classif.svm_iris_2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.903652 +0200 GMT | bm_classif.kknn_iris | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.906320 +0200 GMT | bm_classif.kknn_spam_2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.908765 +0200 GMT | bm_classif.svm_spam_2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.910514 +0200 GMT | bm_classif.kknn_spam | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.912379 +0200 GMT | bm_classif.svm_iris | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.914102 +0200 GMT | bm_classif.kknn_iris_2 | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.914603 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.918062 +0200 GMT | agg | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.919770 +0200 GMT | agg_task_iris | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.921427 +0200 GMT | agg_task_spam | skip
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.921895 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.922713 +0200 GMT |  | find downstream outdated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.924352 +0200 GMT |  | end outdated()
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.924675 +0200 GMT |  | isolate oudated targets
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.927467 +0200 GMT | benchmark_viz | trigger missing
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.928600 +0200 GMT | benchmark_viz | target benchmark_viz
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.995213 +0200 GMT | benchmark_viz | Quitting from lines 8-27 (visualization-report.Rmd) 
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:07.997456 +0200 GMT | benchmark_viz | fail benchmark_viz
+Patricks-MacBook-Pro.local | 84128 | 2019-09-27 07:43:08.000802 +0200 GMT |  | Target `benchmark_viz` failed. Call `diagnose(benchmark_viz)` for details. Error message:
+  cannot open the connection
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.808461 +0200 GMT |  | begin drake_config()
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.824860 +0200 GMT |  | cache /Users/pjs/git/mlr-org/mlr3-learndrake/02-benchmark/.drake
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.825965 +0200 GMT |  | analyze environment
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.827924 +0200 GMT |  | get knitr hash
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.831754 +0200 GMT |  | set knitr files
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.839709 +0200 GMT |  | end drake_config()
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:35.840249 +0200 GMT |  | begin make()
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.755631 +0200 GMT | benchmark_grid | import
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.758841 +0200 GMT | combine_benchmarks | import
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.762068 +0200 GMT | file Rmd/visualization-report.Rmd | import
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.766551 +0200 GMT | create_single_bm | import
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.769089 +0200 GMT |  | begin outdated()
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.770064 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.772559 +0200 GMT | param_set_svm1 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.783842 +0200 GMT | param_set_svm2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.785528 +0200 GMT | param_set_knn1 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.787281 +0200 GMT | param_set_knn2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.789068 +0200 GMT | resampling_inner | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.790883 +0200 GMT | resampling_outer | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.792953 +0200 GMT | terminator | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.795705 +0200 GMT | measures | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.796317 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.799509 +0200 GMT | bm_classif.svm_spam | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.801430 +0200 GMT | bm_classif.svm_iris_2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.803263 +0200 GMT | bm_classif.kknn_iris | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.805068 +0200 GMT | bm_classif.kknn_spam_2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.806725 +0200 GMT | bm_classif.svm_spam_2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.808424 +0200 GMT | bm_classif.kknn_spam | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.810096 +0200 GMT | bm_classif.svm_iris | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.811748 +0200 GMT | bm_classif.kknn_iris_2 | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.812297 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.815601 +0200 GMT | agg | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.817303 +0200 GMT | agg_task_iris | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.818968 +0200 GMT | agg_task_spam | skip
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.819437 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.820374 +0200 GMT |  | find downstream outdated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.821952 +0200 GMT |  | end outdated()
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.822243 +0200 GMT |  | isolate oudated targets
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.824728 +0200 GMT | benchmark_viz | trigger missing
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.825721 +0200 GMT | benchmark_viz | target benchmark_viz
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.901660 +0200 GMT | benchmark_viz | Quitting from lines 8-27 (visualization-report.Rmd) 
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.903789 +0200 GMT | benchmark_viz | fail benchmark_viz
+Patricks-MacBook-Pro.local | 85562 | 2019-09-27 07:44:36.905991 +0200 GMT |  | Target `benchmark_viz` failed. Call `diagnose(benchmark_viz)` for details. Error message:
+  cannot open the connection
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.430136 +0200 GMT |  | begin drake_config()
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.446985 +0200 GMT |  | cache /Users/pjs/git/mlr-org/mlr3-learndrake/02-benchmark/.drake
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.448215 +0200 GMT |  | analyze environment
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.450088 +0200 GMT | report_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.450531 +0200 GMT | param_sets_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.450824 +0200 GMT | benchmark_grid | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.451173 +0200 GMT | create_single_bm | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.453495 +0200 GMT | measures_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.453813 +0200 GMT | tuning_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.454092 +0200 GMT | combine_benchmarks | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.455135 +0200 GMT | resampling_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.455430 +0200 GMT | plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.455718 +0200 GMT | benchmark_plan | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.457026 +0200 GMT |  | get knitr hash
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.461086 +0200 GMT | param_set_svm1 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.462218 +0200 GMT | param_set_svm2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.464023 +0200 GMT | param_set_knn1 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.465112 +0200 GMT | param_set_knn2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.465931 +0200 GMT | resampling_inner | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.466824 +0200 GMT | resampling_outer | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.467684 +0200 GMT | terminator | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.468375 +0200 GMT | measures | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.469126 +0200 GMT | bm_classif.kknn_iris | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.470056 +0200 GMT | bm_classif.kknn_spam | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.470874 +0200 GMT | bm_classif.kknn_iris_2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.471672 +0200 GMT | bm_classif.kknn_spam_2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.472830 +0200 GMT | bm_classif.svm_iris | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.473784 +0200 GMT | bm_classif.svm_spam | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.474916 +0200 GMT | bm_classif.svm_iris_2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.476166 +0200 GMT | bm_classif.svm_spam_2 | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.477190 +0200 GMT | agg | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.477976 +0200 GMT | agg_task_iris | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.478584 +0200 GMT | agg_task_spam | analyze
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.481056 +0200 GMT |  | set knitr files
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.483241 +0200 GMT | report_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.483707 +0200 GMT | param_sets_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.484113 +0200 GMT | benchmark_grid | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.484411 +0200 GMT | create_single_bm | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.484698 +0200 GMT | measures_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.484962 +0200 GMT | tuning_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.485224 +0200 GMT | combine_benchmarks | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.485557 +0200 GMT | resampling_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.485811 +0200 GMT | plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.486067 +0200 GMT | benchmark_plan | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.486321 +0200 GMT | param_set_svm1 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.486576 +0200 GMT | param_set_svm2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.486834 +0200 GMT | param_set_knn1 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.487096 +0200 GMT | param_set_knn2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.487355 +0200 GMT | resampling_inner | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.487692 +0200 GMT | resampling_outer | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.487951 +0200 GMT | terminator | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.488205 +0200 GMT | measures | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.488461 +0200 GMT | bm_classif.kknn_iris | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.488738 +0200 GMT | bm_classif.kknn_spam | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.489011 +0200 GMT | bm_classif.kknn_iris_2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.489288 +0200 GMT | bm_classif.kknn_spam_2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.489566 +0200 GMT | bm_classif.svm_iris | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.489917 +0200 GMT | bm_classif.svm_spam | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.490202 +0200 GMT | bm_classif.svm_iris_2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.490483 +0200 GMT | bm_classif.svm_spam_2 | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.490761 +0200 GMT | agg | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.491039 +0200 GMT | agg_task_iris | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.491314 +0200 GMT | agg_task_spam | connect
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.492047 +0200 GMT |  | connect output files
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.494108 +0200 GMT |  | finalize graph edges
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.494538 +0200 GMT |  | create igraph
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.495377 +0200 GMT |  | trim neighborhoods
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.498668 +0200 GMT |  | add igraph attributes
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.499327 +0200 GMT |  | finalize igraph
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.505806 +0200 GMT |  | end drake_config()
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:37.506362 +0200 GMT |  | begin make()
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.416392 +0200 GMT | benchmark_grid | import
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.420066 +0200 GMT | combine_benchmarks | import
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.425244 +0200 GMT | create_single_bm | import
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.428703 +0200 GMT |  | begin outdated()
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.429893 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.432775 +0200 GMT | param_set_svm1 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.434497 +0200 GMT | param_set_svm2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.436425 +0200 GMT | param_set_knn1 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.438399 +0200 GMT | param_set_knn2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.441010 +0200 GMT | resampling_inner | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.443445 +0200 GMT | resampling_outer | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.445087 +0200 GMT | terminator | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.446602 +0200 GMT | measures | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.447099 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.450239 +0200 GMT | bm_classif.svm_spam | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.452491 +0200 GMT | bm_classif.svm_iris_2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.455008 +0200 GMT | bm_classif.kknn_iris | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.456923 +0200 GMT | bm_classif.kknn_spam_2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.458667 +0200 GMT | bm_classif.svm_spam_2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.460480 +0200 GMT | bm_classif.kknn_spam | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.462230 +0200 GMT | bm_classif.svm_iris | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.464000 +0200 GMT | bm_classif.kknn_iris_2 | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.464550 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.468008 +0200 GMT | agg | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.469727 +0200 GMT | agg_task_iris | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.471389 +0200 GMT | agg_task_spam | skip
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.471927 +0200 GMT |  | find more outdated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.472683 +0200 GMT |  | find downstream outdated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.473144 +0200 GMT |  | end outdated()
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.473409 +0200 GMT |  | isolate oudated targets
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.474158 +0200 GMT |  | All targets are already up to date.
+Patricks-MacBook-Pro.local | 86519 | 2019-09-27 07:45:38.476130 +0200 GMT |  | end make()
