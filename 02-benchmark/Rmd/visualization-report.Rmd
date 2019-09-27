@@ -14,8 +14,8 @@ knitr::opts_chunk$set(
   echo = FALSE
 )
 
-source("packages.R")
-R.utils::sourceDirectory("R")
+source("../packages.R")
+R.utils::sourceDirectory("../R")
 
 # load drake objects
 drake::loadd(
