@@ -34,7 +34,7 @@ rstudioapi::openProject("02-benchmark", newSession = TRUE)
 
 ## Slides
 
-[drake](https://rawcdn.githack.com/mlr-org/mlr3-learndrake/9feb3c462925cc12c1feed1010a035e85cbc1add/slides/drake/index.html)  <img src="https://docs.ropensci.org/drake/reference/figures/logo.svg" alt="logo" height = "15">
+[drake](https://rawcdn.githack.com/mlr-org/mlr3-learndrake/c46dda78d2e4177a1e458c218056c3d00ec55407/slides/drake/index.html)  <img src="https://docs.ropensci.org/drake/reference/figures/logo.svg" alt="logo" height = "15">
 
 [mlr3](https://github.com/mlr-org/mlr-outreach/blob/master/2019_whyr_warsaw/slides.pdf) 
 <img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
