@@ -33,7 +33,6 @@ create_single_bm = function(learner, learner_id, task, measures,
     terminator = terminator,
     tuner = tnr("random_search") # hard coded in this example
   )
-  at$store_bmr = TRUE
 
   resampling_outer = resampling_outer
   design = benchmark_grid(tasks = task, learners = list(at), resamplings = resampling_outer)
