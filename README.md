@@ -34,12 +34,9 @@ rstudioapi::openProject("02-benchmark", newSession = TRUE)
 
 ## Slides
 
-[drake](https://raw.githack.com/mlr-org/mlr3-learndrake/master/slides/drake/index.html)  <img src="https://docs.ropensci.org/drake/reference/figures/logo.svg" alt="logo" height = "15">
+[drake](https://rawcdn.githack.com/mlr-org/mlr3-learndrake/9feb3c462925cc12c1feed1010a035e85cbc1add/slides/drake/index.html)  <img src="https://docs.ropensci.org/drake/reference/figures/logo.svg" alt="logo" height = "15">
 
-[mlr3](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3.html) 
-<img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
-
-[mlr3pipelines](https://raw.githack.com/mlr-org/mlr-outreach/master/2019_whyr_warsaw/slides/whyr2019_mlr3pipelines.html) 
+[mlr3](https://github.com/mlr-org/mlr-outreach/blob/master/2019_whyr_warsaw/slides.pdf) 
 <img src="https://raw.githubusercontent.com/mlr-org/mlr/master/man/figures/logo_navbar.png" alt="logo" height="10">
 
 # Other _drake_ learning resources
