@@ -29,6 +29,7 @@ Imports:
     mlr3learners,
     mlr3tuning,
     paradox,
+    progress,
     R.utils,
     rmarkdown,
     rstudioapi,
