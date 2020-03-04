@@ -33,6 +33,7 @@ Imports:
     paradox,
     progress,
     R.utils,
+    ranger,
     rmarkdown,
     rstudioapi,
     stringr,
