@@ -30,6 +30,7 @@ Imports:
     mlr3tuning,
     paradox,
     R.utils,
+    rmarkdown,
     rstudioapi,
     stringr,
     tibble,
