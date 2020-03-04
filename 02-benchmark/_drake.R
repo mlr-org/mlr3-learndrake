@@ -5,7 +5,7 @@ source("packages.R")
 sourceDirectory("R")
 
 # set mlr3 options globally: suppress progress output of `benchmark()`
-#lgr::get_logger("mlr3")$set_threshold("warn")
+lgr::get_logger("mlr3")$set_threshold("warn")
 
 # Create plans -----------------------------------------------------------------
 
@@ -24,6 +24,6 @@ plan = bind_plans(
 drake_config(plan, verbose = 3, lock_envir = FALSE,
   #targets = "benchmark_grid",
   # internal parallelization
-  prework = quote(future::plan(future.callr::callr, workers = 4)),
+  #prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
   log_make = here::here("log/drake.log"))
