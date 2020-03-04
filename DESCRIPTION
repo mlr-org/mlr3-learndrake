@@ -21,6 +21,7 @@ Imports:
     conflicted,
     dplyr,
     drake,
+    e1071,
     future,
     future.callr,
     here,
