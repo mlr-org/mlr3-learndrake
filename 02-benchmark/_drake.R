@@ -17,15 +17,15 @@ plan = bind_plans(
   measures_plan,
   benchmark_plan,
   report_plan
-  )
+)
 
 # Set the config ---------------------------------------------------------------
 
 drake_config(plan,
-             verbose = 2,
-             recover = FALSE,
+  verbose = 2,
+  recover = FALSE,
   # internal parallelization
   prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
   log_make = here::here("log/drake.log")
-  )
+)
