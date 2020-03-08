@@ -15,15 +15,17 @@ plan = bind_plans(
   tuning_plan,
   learners_plan,
   measures_plan,
-  benchmark_plan#,
-  #report_plan
+  benchmark_plan,
+  report_plan
   )
 
 # Set the config ---------------------------------------------------------------
 
-drake_config(plan, verbose = 3, lock_envir = FALSE,
-  #targets = "benchmark_grid",
+drake_config(plan,
+             verbose = 2,
+             recover = FALSE,
   # internal parallelization
-  #prework = quote(future::plan(future.callr::callr, workers = 4)),
+  prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
-  log_make = here::here("log/drake.log"))
+  log_make = here::here("log/drake.log")
+  )

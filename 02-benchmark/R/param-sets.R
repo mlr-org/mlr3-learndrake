@@ -34,5 +34,12 @@ param_sets_plan <- drake_plan(
     ParamSet$new(params = list(
       ParamInt$new("k", lower = 1, upper = 30)
     ))
-  })
+  }),
+
+  param_set_list = list(
+    param_set_svm1,
+    param_set_svm2,
+    param_set_knn1,
+    param_set_knn2
+  )
 )

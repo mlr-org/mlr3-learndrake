@@ -19,7 +19,7 @@ R.utils::sourceDirectory("../R")
 
 # load drake objects
 drake::loadd(
-  agg
+  bm_agg
 )
 library("ggplot2")
 library("mlr3")
@@ -29,13 +29,13 @@ library("mlr3viz")
 ## Default
 
 ```{r, warning=FALSE}
-autoplot(agg)
+autoplot(bm_agg)
 ```
 
 ## Colored
 
 ```{r, warning=FALSE}
-autoplot(agg) +
+autoplot(bm_agg) +
   geom_boxplot(aes(fill = learner_id)) +
   scale_fill_viridis_d()
 ```
