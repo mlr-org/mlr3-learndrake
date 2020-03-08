@@ -27,6 +27,14 @@ rstudioapi::openProject("01-intro", newSession = TRUE)
 rstudioapi::openProject("02-benchmark", newSession = TRUE)
 ```
 
+Next, call `drake::r_make()` to run the complete project:
+
+- This will build all R objects (or "targets" in drake's DSL) in the correct order.
+- You can visualize the project dependency structure via `r_vis_drake_graph()`.
+- To load specific R objects into the global environment, call `drake::loadd(<object name>)`.
+
+See the [drake manual](https://books.ropensci.org/drake/) for more information on {drake}.
+
 ## Examples
 
 **01-intro**: Hyperparameter tuning and training of a Random Forest classifier on the "iris" dataset
