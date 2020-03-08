@@ -23,6 +23,7 @@ Imports:
     drake (>= 7.11.0),
     e1071,
     future,
+    future.apply,
     future.callr,
     here,
     kknn,
@@ -41,6 +42,6 @@ Imports:
     tidyr,
     visNetwork
 Remotes: 
-  mlr-org/mlr3
+    mlr-org/mlr3
 Encoding: UTF-8
 LazyData: true
