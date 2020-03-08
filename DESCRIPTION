@@ -25,6 +25,7 @@ Imports:
     future,
     future.apply,
     future.callr,
+    ggplot2,
     here,
     kknn,
     magrittr,
