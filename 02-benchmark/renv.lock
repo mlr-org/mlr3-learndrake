@@ -121,6 +121,13 @@
       "Repository": "CRAN",
       "Hash": "a667800d5f0350371bedeb8b8b950289"
     },
+    "class": {
+      "Package": "class",
+      "Version": "7.3-15",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4fba6a022803b6c3f30fd023be3fa818"
+    },
     "cli": {
       "Package": "cli",
       "Version": "2.0.2",
@@ -191,6 +198,13 @@
       "Repository": "CRAN",
       "Hash": "331e17bca2f794d492b03a81d7bbcdd1"
     },
+    "e1071": {
+      "Package": "e1071",
+      "Version": "1.7-3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "728e85416ffc90743054c1ac04486d69"
+    },
     "ellipsis": {
       "Package": "ellipsis",
       "Version": "0.3.0",
@@ -232,6 +246,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "20c20385da360f28c07364f2d099a6d7"
+    },
+    "future.apply": {
+      "Package": "future.apply",
+      "Version": "1.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a690d4bb5e287dc499229617a944dc39"
     },
     "future.callr": {
       "Package": "future.callr",
@@ -295,6 +316,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "2d7691222f82f41e93f6d30f169bd5e1"
+    },
+    "htmlwidgets": {
+      "Package": "htmlwidgets",
+      "Version": "1.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "41bace23583fbc25089edae324de2dc3"
     },
     "igraph": {
       "Package": "igraph",
@@ -692,6 +720,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ce4f6271baa94776db692f1cb2055bee"
+    },
+    "visNetwork": {
+      "Package": "visNetwork",
+      "Version": "2.0.9",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "12545f2acf49d1d346d075580122d89c"
     },
     "withr": {
       "Package": "withr",

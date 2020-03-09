@@ -39,7 +39,6 @@ Imports:
     ranger,
     rmarkdown,
     rstudioapi,
-    stringr,
     tibble,
     tidyr,
     visNetwork
