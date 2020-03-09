@@ -1,7 +1,8 @@
 # mlr3-learndrake
 
 <!-- badges: start -->
-[![R CMD Check via {tic}](https://img.shields.io/github/workflow/status/mlr-org/mlr3-learndrake/R%20CMD%20Check%20via%20%7Btic%7D?logo=github&label=R CMD Check via {tic}&style=flat-square)](https://github.com/mlr-org/mlr3-learndrake/actions)
+![Fixed package versions](https://github.com/mlr-org/mlr3-learndrake/workflows/Fixed%20package%20versions/badge.svg)
+![Latest package versions](https://github.com/mlr-org/mlr3-learndrake/workflows/Latest%20package%20versions/badge.svg)
 <!-- badges: end -->
 
 The goal of mlr3-learndrake is to show how to use the [mlr3](https://github.com/mlr-org/mlr3) package framework in combination with the workflow package [drake](https://github.com/ropensci/drake).
@@ -14,16 +15,16 @@ To clone this course, excecute the following code locally
 usethis::use_course("mlr-org/mlr3-learndrake")
 ```
 
-To run the examples with fixed R package versions call
+To run the examples with **fixed** R package versions call
 
 ```r
 renv::restore()
 ```
 
-To run the examples with the latest R package versions call
+To run the examples with the **latest** R package versions call
 
 ```r
-renv::restore()
+renv::hydrate()
 ```
 
 After installing the dependencies, open the examples:

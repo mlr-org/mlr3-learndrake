@@ -2,6 +2,8 @@
 
 if (ci_has_env("LATEST")) {
   get_stage("install") %>%
+    # for querying deps in Rmd files
+    add_step(step_install_cran("rmarkdown")) %>%
     add_code_step(renv::hydrate())
 } else {
   get_stage("install") %>%
