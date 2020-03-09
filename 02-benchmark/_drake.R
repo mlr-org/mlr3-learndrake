@@ -5,7 +5,7 @@ source("packages.R")
 sourceDirectory("R")
 
 # set mlr3 options globally: suppress progress output of `benchmark()`
-lgr::get_logger("mlr3")$set_threshold("warn")
+# lgr::get_logger("mlr3")$set_threshold("warn")
 
 # Create plans -----------------------------------------------------------------
 
