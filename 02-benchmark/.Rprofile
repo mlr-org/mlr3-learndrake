@@ -1,3 +1,1 @@
-# source("renv/activate.R")
-
-library(drake)
+source("renv/activate.R")
