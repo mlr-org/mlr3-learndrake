@@ -32,6 +32,7 @@ Imports:
     mlr3 (>= 1.7.0-9000),
     mlr3learners,
     mlr3tuning,
+    mlr3viz,
     paradox,
     progress,
     R.utils,
