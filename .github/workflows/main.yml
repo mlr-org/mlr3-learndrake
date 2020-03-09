@@ -40,7 +40,6 @@ jobs:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       # prevent rgl issues because no X11 display is available
       RGL_USE_NULL: true
-      LATEST: true
 
     steps:
       - uses: actions/checkout@v1
