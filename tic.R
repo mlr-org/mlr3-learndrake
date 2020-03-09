@@ -1,7 +1,12 @@
 # installs dependencies, runs R CMD check, runs covr::codecov()
-get_stage("install") %>%
-  #add_step(step_install_deps())
-  add_code_step(renv::restore())
+
+if (ci_has_env("LATEST")) {
+  get_stage("install") %>%
+    add_code_step(renv::hydrate())
+} else {
+  get_stage("install") %>%
+    add_code_step(renv::restore())
+}
 
 get_stage("script") %>%
   add_code_step(setwd("01-intro")) %>%
