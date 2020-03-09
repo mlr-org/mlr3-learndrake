@@ -17,7 +17,7 @@ create_single_bm <- function(learner,
     learner = learner,
     resampling = resampling_inner,
     measures = msr("classif.ce"),
-    tune_ps = rlang::eval_tidy(param_set),
+    tune_ps = param_set,
     terminator = terminator,
     tuner = tnr("random_search") # hard coded in this example
   )
