@@ -14,20 +14,26 @@ To clone this course, excecute the following code locally
 usethis::use_course("mlr-org/mlr3-learndrake")
 ```
 
-To make sure you have installed all required packages, call
+To run the examples with fixed R package versions call
 
 ```r
-devtools::install_dev_deps()
+renv::restore()
 ```
 
-To open the respective example projects, call one of the following
+To run the examples with the latest R package versions call
+
+```r
+renv::restore()
+```
+
+After installing the dependencies, open the examples:
 
 ```r
 rstudioapi::openProject("01-intro", newSession = TRUE)
 rstudioapi::openProject("02-benchmark", newSession = TRUE)
 ```
 
-Next, call `drake::r_make()` to run the complete project:
+and call `drake::r_make()` to run the complete project:
 
 - This will build all R objects (or "targets" in drake's DSL) in the correct order.
 - You can visualize the project dependency structure via `r_vis_drake_graph()`.
