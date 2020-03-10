@@ -15,13 +15,13 @@ To clone this course, excecute the following code locally
 usethis::use_course("mlr-org/mlr3-learndrake")
 ```
 
-To run the examples with **fixed** R package versions call
+To install a **fixed snapshot** of the required R packages call
 
 ```r
 renv::restore()
 ```
 
-To run the examples with the **latest** R package versions call
+To install the **latest** versions of the required R packages call
 
 ```r
 renv::hydrate()
