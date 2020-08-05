@@ -4,3 +4,4 @@
 *.drake
 README.html
 drake.log
+.Renviron
