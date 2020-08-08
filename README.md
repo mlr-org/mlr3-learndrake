@@ -1,8 +1,8 @@
 # mlr3-learndrake
 
 <!-- badges: start -->
-![Fixed package versions](https://github.com/mlr-org/mlr3-learndrake/workflows/Fixed%20package%20versions/badge.svg)
-![Latest package versions](https://github.com/mlr-org/mlr3-learndrake/workflows/Latest%20package%20versions/badge.svg)
+![fixed](https://github.com/mlr-org/mlr3-learndrake/workflows/fixed/badge.svg)
+![latest](https://github.com/mlr-org/mlr3-learndrake/workflows/latest/badge.svg)
 <!-- badges: end -->
 
 The goal of mlr3-learndrake is to show how to use the [mlr3](https://github.com/mlr-org/mlr3) package framework in combination with the workflow package [drake](https://github.com/ropensci/drake).
