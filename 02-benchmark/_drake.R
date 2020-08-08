@@ -10,7 +10,7 @@ sourceDirectory("R")
 # Create plans -----------------------------------------------------------------
 
 plan = bind_plans(
-  param_sets_plan,
+  search_space_plan,
   resampling_plan,
   tuning_plan,
   learners_plan,
@@ -22,10 +22,11 @@ plan = bind_plans(
 # Set the config ---------------------------------------------------------------
 
 drake_config(plan,
+             target = "bm",
   verbose = 2,
   recover = FALSE,
   # internal parallelization
-  prework = quote(future::plan(future.callr::callr, workers = 4)),
+  #prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
   log_make = here::here("log/drake.log")
 )

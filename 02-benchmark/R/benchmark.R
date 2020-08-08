@@ -19,7 +19,7 @@ benchmark_plan <- drake_plan(
     "classif.kknn", "KNN-PS1",
     "classif.kknn", "KNN-PS2"
   ) %>%
-    dplyr::mutate(param_set = param_set_list) %>%
+    dplyr::mutate(search_space = search_space_list) %>%
     tidyr::crossing(task = c("iris", "spam"))),
 
   bm = target(
@@ -28,8 +28,9 @@ benchmark_plan <- drake_plan(
       learner = benchmark_grid$learner,
       learner_id = benchmark_grid$learner_id,
       task = benchmark_grid$task,
-      measures = measures,
-      param_set = benchmark_grid$param_set[[1]],
+      measure = measure,
+      search_space = benchmark_grid$search_space[[1]],
+      #param_set = benchmark_grid$param_set[[1]],
       resampling_inner = resampling_inner,
       resampling_outer = resampling_outer,
       terminator = terminator

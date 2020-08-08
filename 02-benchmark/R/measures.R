@@ -1,3 +1,3 @@
 measures_plan = drake_plan(
-  measures = target(msr("classif.ce"))
+  measure = target(msr("classif.ce"))
   )
