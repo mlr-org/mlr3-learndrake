@@ -30,7 +30,6 @@ benchmark_plan <- drake_plan(
       task = benchmark_grid$task,
       measure = measure,
       search_space = benchmark_grid$search_space[[1]],
-      #param_set = benchmark_grid$param_set[[1]],
       resampling_inner = resampling_inner,
       resampling_outer = resampling_outer,
       terminator = terminator

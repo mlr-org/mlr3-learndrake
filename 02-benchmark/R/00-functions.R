@@ -16,9 +16,8 @@ create_single_bm <- function(learner,
   at <- AutoTuner$new(
     learner = learner,
     resampling = resampling_inner,
-    measure = msr("classif.ce"),
+    measure = msr("classif.ce"), # hard coded in this example
     search_space = search_space,
-    #tune_ps = search_space,
     terminator = terminator,
     tuner = tnr("random_search") # hard coded in this example
   )

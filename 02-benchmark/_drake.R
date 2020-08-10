@@ -26,7 +26,7 @@ drake_config(plan,
   verbose = 2,
   recover = FALSE,
   # internal parallelization
-  #prework = quote(future::plan(future.callr::callr, workers = 4)),
+  prework = quote(future::plan(future.callr::callr, workers = 4)),
   # logging
   log_make = here::here("log/drake.log")
 )
