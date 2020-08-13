@@ -193,10 +193,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.2.0",
+      "Version": "0.2.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "46a667606c78a2c62168a8da34e42106"
+      "Hash": "c4c83167f43ca762a9fa998d4fead3ae"
     },
     "crayon": {
       "Package": "crayon",
@@ -555,10 +555,10 @@
     },
     "mlr3misc": {
       "Package": "mlr3misc",
-      "Version": "0.4.0",
+      "Version": "0.5.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e25f68986df536523e1a879d82eac1f5"
+      "Hash": "0b0fd6041cb599dc176aac28a4358031"
     },
     "mlr3tuning": {
       "Package": "mlr3tuning",
