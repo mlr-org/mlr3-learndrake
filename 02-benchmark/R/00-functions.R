@@ -3,10 +3,10 @@
 create_single_bm <- function(learner,
                              learner_id,
                              task,
-                             measures,
+                             measure,
                              resampling_inner,
                              resampling_outer,
-                             param_set,
+                             search_space,
                              terminator) {
 
   learner <- lrn(learner)
@@ -16,8 +16,8 @@ create_single_bm <- function(learner,
   at <- AutoTuner$new(
     learner = learner,
     resampling = resampling_inner,
-    measures = msr("classif.ce"),
-    tune_ps = param_set,
+    measure = msr("classif.ce"), # hard coded in this example
+    search_space = search_space,
     terminator = terminator,
     tuner = tnr("random_search") # hard coded in this example
   )

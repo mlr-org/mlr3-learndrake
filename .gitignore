@@ -3,5 +3,5 @@
 .RData
 *.drake
 README.html
-drake.log
+*drake.log
 .Renviron

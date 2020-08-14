@@ -1,4 +1,4 @@
-param_sets_plan <- drake_plan(
+search_space_plan <- drake_plan(
   param_set_svm1 = target(
     ParamSet$new(params = list(
       ParamFct$new("type", "C-classification"),
@@ -36,7 +36,7 @@ param_sets_plan <- drake_plan(
     ))
   }),
 
-  param_set_list = list(
+  search_space_list = list(
     param_set_svm1,
     param_set_svm2,
     param_set_knn1,

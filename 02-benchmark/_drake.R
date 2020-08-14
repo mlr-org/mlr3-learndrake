@@ -10,7 +10,7 @@ sourceDirectory("R")
 # Create plans -----------------------------------------------------------------
 
 plan = bind_plans(
-  param_sets_plan,
+  search_space_plan,
   resampling_plan,
   tuning_plan,
   learners_plan,
