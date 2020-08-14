@@ -22,7 +22,6 @@ plan = bind_plans(
 # Set the config ---------------------------------------------------------------
 
 drake_config(plan,
-             target = "bm",
   verbose = 2,
   recover = FALSE,
   # internal parallelization
