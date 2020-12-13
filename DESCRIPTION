@@ -1,7 +1,7 @@
-Package: mlr3-learndrake
+Package: mlr3learndrake
 Title: Use mlr3 with drake
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     c(person(given = "Patrick",
              family = "Schratz",
              role = c("aut", "cre"),
@@ -18,3 +18,4 @@ URL: https://github.com/mlr-org/mlr3-learndrake
 BugReports: https://github.com/mlr-org/mlr3-learndrake/issues
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
