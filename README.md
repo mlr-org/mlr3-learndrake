@@ -1,5 +1,7 @@
 # mlr3-learndrake
 
+# DEPRECATED - please see https://github.com/mlr-org/mlr3-targets
+
 <!-- badges: start -->
 ![fixed](https://github.com/mlr-org/mlr3-learndrake/workflows/fixed/badge.svg)
 ![latest](https://github.com/mlr-org/mlr3-learndrake/workflows/latest/badge.svg)
